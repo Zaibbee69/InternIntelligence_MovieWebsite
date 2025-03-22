@@ -1,0 +1,133 @@
+$blackGrey: #121212;
+$deepPurple: #693C83;
+$mediumPurple: rgba(30, 30, 46, 0.9);
+$mutedPinkish: #B5838D;
+$offWhite: #EDEDED;
+$lighterBlack: #1E1E1E;
+
+$robotoFont: Roboto;
+$tekturFont: Tektur;
+$exoFont: Exo;
+
+%flexer-extender
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body
+{
+    font-family: $robotoFont;
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+.nav-logo-ctn
+{
+    @extend %flexer-extender;
+    background-color: $mediumPurple;
+    border: none;
+}
+
+.nav-logo
+{
+    font-size: 26px;
+    font-family: $tekturFont;
+    color: white;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+nav
+{
+    @extend %flexer-extender;
+    flex-direction: column;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: 50px;
+    background-color: $lighterBlack;
+}
+
+.nav-element-ctn-main
+{
+    @extend %flexer-extender;
+    gap: 100px;
+}
+
+.nav-element
+{
+    text-decoration: none;
+    font-family: $exoFont;
+    font-weight: bold;
+    font-size: 16px;
+    color: white;
+}
+
+.nav-search
+{
+    padding: 10px 40px;
+    border-radius: 30px;
+    border: none;
+}
+
+footer
+{
+    margin-top: 100px;
+}
+
+footer {
+    background: rgba(30, 30, 46, 0.9);
+    backdrop-filter: blur(10px);
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+
+    .footer-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .footer-links {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        gap: 20px;
+
+        li {
+            display: inline;
+
+            a {
+                color: #b4a7d6;
+                text-decoration: none;
+                transition: color 0.3s ease-in-out;
+
+                &:hover {
+                    color: #d1c4e9;
+                }
+            }
+        }
+    }
+
+    .social-icons {
+        display: flex;
+        gap: 15px;
+
+        a {
+            font-size: 1.5rem;
+            color: #b4a7d6;
+            transition: transform 0.3s ease-in-out;
+
+            &:hover {
+                transform: scale(1.1);
+                color: #d1c4e9;
+            }
+        }
+    }
+}
+
+
