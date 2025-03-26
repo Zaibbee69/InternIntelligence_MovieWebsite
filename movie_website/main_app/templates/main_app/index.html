@@ -1,0 +1,16 @@
+{% extends "main_app/layout.html" %}
+
+{% load static %}
+
+
+{% block body %}
+{% for movie in movies %}
+    <div class="movie">
+        <img src="https://image.tmdb.org/t/p/w500{{ movie.poster_path }}" alt="{{ movie.title }}">
+        <h3>{{ movie.title }}</h3>
+        <p>{{ movie.overview|truncatewords:20 }}</p>
+        <span>⭐ {{ movie.vote_average }}</span>
+    </div>
+{% endfor %}
+
+{% endblock body %}

@@ -35,7 +35,7 @@ class Movie(models.Model):
         MinValueValidator(0), MaxValueValidator(10)
     ])
     genre = models.ManyToManyField(Genre, related_name="genre")
-    director = models.ManyToManyField(Person, related_name="movies", on_delete=models.CASCADE)
+    director = models.ManyToManyField(Person, related_name="movies")
 
     def __str__(self):
         return self.title

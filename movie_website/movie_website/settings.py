@@ -11,9 +11,19 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
+import os
+import environ
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+# Initialize Environ
+env = environ.Env()
+env.read_env(os.path.join(BASE_DIR, ".env"))  # Explicitly load .env
+
+# Getting API Key
+TMDB_API_KEY = env("TMDB_API_KEY", default="")  # Default prevents errors if missing
 
 
 # Quick-start development settings - unsuitable for production
